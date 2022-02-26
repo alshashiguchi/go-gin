@@ -1,0 +1,23 @@
+POST http://localhost:8080/alunos/
+content-type: application/json
+
+{   
+    "nome": "Nome Api Rest",
+    "rg": "Historia Api Rest",
+    "cpf": "12345678901"
+}
+
+###
+
+DELETE http://localhost:9000/api/personalidade/3
+content-type: application/json
+
+###
+
+PUT http://localhost:9000/api/personalidade/4
+content-type: application/json
+
+{   
+    "nome": "Nome Api Rest 2.0",
+    "historia": "Historia Api Rest 2.0"
+}
