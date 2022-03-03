@@ -2,14 +2,14 @@ POST http://localhost:8080/alunos/
 content-type: application/json
 
 {   
-    "nome": "Nome Api Rest",
-    "rg": "Historia Api Rest",
-    "cpf": "12345678901"
+    "nome": "Buffet",
+    "rg": "321654987",
+    "cpf": "12345678921"
 }
 
 ###
 
-DELETE http://localhost:9000/api/personalidade/3
+GET  http://localhost:8080/alunos/
 content-type: application/json
 
 ###
