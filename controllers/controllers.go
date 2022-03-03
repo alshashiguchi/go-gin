@@ -43,5 +43,24 @@ func BuscaAlunoPorId(c *gin.Context) {
 
 	database.DB.First(&aluno, id)
 
+	if aluno.ID == 0 {
+		c.JSON(http.StatusNotFound, gin.H{
+			"Not found": "Aluno não encontrado",
+		})
+
+		return
+	}
+
 	c.JSON(http.StatusOK, aluno)
+}
+
+func DeletaAluno(c *gin.Context) {
+	var aluno models.Aluno
+	id := c.Params.ByName("id")
+
+	database.DB.Delete(&aluno, id)
+
+	c.JSON(http.StatusOK, gin.H{
+		"data": "Aluno deletado com sucesso!",
+	})
 }

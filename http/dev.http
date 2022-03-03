@@ -14,7 +14,12 @@ content-type: application/json
 
 ###
 
-GET  http://localhost:8080/aluno/3
+GET  http://localhost:8080/aluno/300
+content-type: application/json
+
+###
+
+DELETE   http://localhost:8080/aluno/1
 content-type: application/json
 
 ###
