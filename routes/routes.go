@@ -13,6 +13,7 @@ func HandleRequest() {
 	r.GET("/aluno/:id", controllers.BuscaAlunoPorId)
 	r.POST("/alunos", controllers.CriaNovoAluno)
 	r.DELETE("/aluno/:id", controllers.DeletaAluno)
+	r.PATCH("/aluno/:id", controllers.EditaAluno)
 
 	r.Run() // roda na porta 8080 para definir outra r.Run(":5000")
 }

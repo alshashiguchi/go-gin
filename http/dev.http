@@ -14,7 +14,7 @@ content-type: application/json
 
 ###
 
-GET  http://localhost:8080/aluno/300
+GET  http://localhost:8080/aluno/3
 content-type: application/json
 
 ###
@@ -24,10 +24,11 @@ content-type: application/json
 
 ###
 
-PUT http://localhost:9000/api/personalidade/4
+PATCH  http://localhost:8080/aluno/31
 content-type: application/json
 
 {   
-    "nome": "Nome Api Rest 2.0",
-    "historia": "Historia Api Rest 2.0"
+    "nome": "Arthur",
+    "rg": "321654987",
+    "cpf": "12345678921"
 }
