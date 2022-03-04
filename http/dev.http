@@ -32,3 +32,8 @@ content-type: application/json
     "rg": "321654987",
     "cpf": "12345678921"
 }
+
+###
+
+GET  http://localhost:8080/aluno/cpf/12345678901
+content-type: application/json
