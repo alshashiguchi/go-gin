@@ -2,8 +2,8 @@ POST http://localhost:8080/alunos/
 content-type: application/json
 
 {   
-    "nome": "Buffet",
-    "rg": "321654987",
+    "nome": "Buffet1",
+    "rg": "321",
     "cpf": "12345678921"
 }
 
@@ -24,11 +24,11 @@ content-type: application/json
 
 ###
 
-PATCH  http://localhost:8080/aluno/31
+PATCH  http://localhost:8080/aluno/35
 content-type: application/json
 
 {   
-    "nome": "Arthur",
+    "nome": "Andre",
     "rg": "321654987",
     "cpf": "12345678921"
 }
