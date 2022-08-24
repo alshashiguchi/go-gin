@@ -1,0 +1,4 @@
+Ver o hostname do postgres
+docker-compose up
+docker-compose exec postgres sh
+hostname -i
