@@ -1,9 +1,11 @@
 package main
 
 import (
+	"encoding/json"
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
+	"strconv"
 	"testing"
 
 	"github.com/alshashiguchi/api-go-gin/controllers"
@@ -84,4 +86,27 @@ func TestLBuscaAlunoPorCPFHandler(t *testing.T) {
 
 	//Assert
 	assert.Equal(t, http.StatusOK, res.Code, "Deveriam ser iguais")
+}
+
+func TestBuscaAlunoPorIdHandler(t *testing.T) {
+	database.ConectaComBancoDeDados()
+	CriaAlunoMock()
+	defer DeletaAlunoMock()
+
+	r := SetupDasRotasDeTeste()
+	r.GET("/aluno/:id", controllers.BuscaAlunoPorId)
+	pathDaBusca := "/aluno/" + strconv.Itoa(ID)
+
+	req, _ := http.NewRequest("GET", pathDaBusca, nil)
+	res := httptest.NewRecorder()
+
+	// act
+	r.ServeHTTP(res, req)
+
+	//Assert
+	var alunoMock models.Aluno
+	json.Unmarshal(res.Body.Bytes(), &alunoMock)
+	assert.Equal(t, "Nome do aluno Teste", alunoMock.Nome, "Deveriam ser iguais")
+	assert.Equal(t, "12345678901", alunoMock.CPF, "Deveriam ser iguais")
+	assert.Equal(t, "123456789", alunoMock.RG, "Deveriam ser iguais")
 }

@@ -2,3 +2,6 @@ Ver o hostname do postgres
 docker-compose up
 docker-compose exec postgres sh
 hostname -i
+
+go test -run <Nome do teste>
+go test -run TestListandoTodosOsAlunosHandler
