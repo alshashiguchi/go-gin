@@ -97,7 +97,7 @@ func EditaAluno(c *gin.Context) {
 		return
 	}
 
-	database.DB.UpdateColumns(aluno)
+	database.DB.Save(&aluno)
 
 	c.JSON(http.StatusOK, aluno)
 }
