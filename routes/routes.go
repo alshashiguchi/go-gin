@@ -7,6 +7,7 @@ import (
 
 func HandleRequest() {
 	r := gin.Default()
+	r.LoadHTMLGlob("templates/*")
 
 	r.GET("/alunos", controllers.ExibeTodosAlunos)
 	r.GET("/:nome", controllers.Saudacao)
@@ -15,6 +16,8 @@ func HandleRequest() {
 	r.DELETE("/aluno/:id", controllers.DeletaAluno)
 	r.PATCH("/aluno/:id", controllers.EditaAluno)
 	r.GET("/aluno/cpf/:cpf", controllers.BuscaAlunoPorCPF)
+
+	r.GET("/index", controllers.ExibePaginaIndex)
 
 	r.Run() // roda na porta 8080 para definir outra r.Run(":5000")
 }
